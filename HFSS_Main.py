@@ -10,6 +10,10 @@ import HfssScriptUtil as hfss
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 oDesktop.RestoreWindow()
+
+# Add this line for Linux implementation
+# oDesktop.OpenProject("/bwrcq/C/muppala-beam/HFSS/Project_Temp.aedt") 
+
 oProject = oDesktop.SetActiveProject("USlotPatch_Trial")
 oDesign = oProject.SetActiveDesign("Xband_Uslot_Patch_original")
 oDesign.ChangeProperty(
@@ -143,3 +147,4 @@ oDesign.AnalyzeAll()
 oModule = oDesign.GetModule("ReportSetup")
 oModule.ExportToFile("SParams", "C:/Users/mavarma/Dropbox (University of Michigan)/YOUTUBE Tutorials/AntennasAndArrays 01 - U Slot Patch Antenna/MATLAB_Codes_Trial/S11.csv", False)
 oDesign.DeleteFullVariation("All", False)
+
